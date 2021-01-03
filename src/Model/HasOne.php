@@ -49,7 +49,7 @@ class HasOne extends BelongsTo
             $relation->save($related);
         }
 
-        // no need to refresh $record as the Eloquent adapter will do it.
+        // no need to refresh $record as the model adapter will do it.
     }
 
     public function replace($record, array $relationship, EncodingParametersInterface $parameters)

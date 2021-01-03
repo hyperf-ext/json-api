@@ -51,7 +51,7 @@ class BootJsonApiMiddleware extends AbstractMiddleware
      * - Loads the configuration for the named API that this request is being routed to.
      * - Registers the API in the service container.
      * - Substitutes bindings on the route.
-     * - Overrides the Laravel current page resolver so that it uses the JSON API page parameter.
+     * - Overrides the Hyperf current page resolver so that it uses the JSON API page parameter.
      *
      * @param string $namespace the API namespace, as per your JSON API configuration
      * @return mixed

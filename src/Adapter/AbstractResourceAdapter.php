@@ -250,7 +250,7 @@ abstract class AbstractResourceAdapter implements ResourceAdapterInterface, Stor
     /**
      * Fill any related records that need to be filled after the primary record has been persisted.
      *
-     * E.g. this is useful for hydrating many-to-many Eloquent relations, where `$record` must
+     * E.g. this is useful for hydrating many-to-many model relations, where `$record` must
      * be persisted before the many-to-many database link can be created.
      *
      * @param $record

@@ -51,7 +51,7 @@ final class ApiRegistration
     private $options;
 
     /**
-     * Laravel route attributes.
+     * Hyperf route attributes.
      *
      * @var array
      */

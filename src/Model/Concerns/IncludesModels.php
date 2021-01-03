@@ -81,7 +81,7 @@ trait IncludesModels
     protected $includePaths = [];
 
     /**
-     * Whether Eloquent relations are camel cased.
+     * Whether model relations are camel cased.
      *
      * @var bool
      */
@@ -155,10 +155,10 @@ trait IncludesModels
     }
 
     /**
-     * Convert a JSON API field name to an Eloquent model relation name.
+     * Convert a JSON API field name to an model relation name.
      *
      * According to the PSR1 spec, method names on classes MUST be camel case.
-     * However, there seem to be some Laravel developers who snake case
+     * However, there seem to be some Hyperf developers who snake case
      * relationship methods on their models, so that the method name matches
      * the snake case format of attributes (column values).
      *
@@ -166,9 +166,9 @@ trait IncludesModels
      * conversion:
      *
      * - If `true`, a field name of `user-history` or `user_history` will
-     * expect the Eloquent model relation method to be `userHistory`.
+     * expect the model relation method to be `userHistory`.
      * - If `false`, a field name of `user-history` or `user_history` will
-     * expect the Eloquent model relation method to be `user_history`. I.e.
+     * expect the model relation method to be `user_history`. I.e.
      * if PSR1 is not being followed, the best guess is that method names
      * are snake case.
      *
@@ -178,7 +178,7 @@ trait IncludesModels
      * @param string $field
      *                      the JSON API field name
      * @return string
-     *                the expected relation name on the Eloquent model
+     *                the expected relation name on the model
      */
     protected function modelRelationForField($field)
     {

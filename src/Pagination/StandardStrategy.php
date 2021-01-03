@@ -176,8 +176,8 @@ class StandardStrategy implements PagingStrategyInterface
     /**
      * Get the default per-page value for the query.
      *
-     * If the query is an Eloquent builder, we can pass in `null` as the default,
-     * which then delegates to the model to get the default. Otherwise the Laravel
+     * If the query is an model builder, we can pass in `null` as the default,
+     * which then delegates to the model to get the default. Otherwise the Hyperf
      * standard default is 15.
      *
      * @param $query
@@ -210,7 +210,6 @@ class StandardStrategy implements PagingStrategyInterface
      *
      * @param ModelBuilder|QueryBuilder|Relation $query
      * @return $this
-     * @see https://github.com/cloudcreativity/laravel-json-api/issues/313
      */
     protected function defaultOrder($query)
     {

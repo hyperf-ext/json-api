@@ -150,8 +150,8 @@ return [
              */
             'url' => [
                 'host' => null,
-                'namespace' => '/client/v1',
-                'name' => 'client:v1:',
+                'namespace' => '/v1',
+                'name' => 'v1:',
             ],
     
             /*
@@ -273,7 +273,5 @@ return [
         'name' => 'json-api',
         'group' => 'default',
     ],
-    
-    
 ];
 ```

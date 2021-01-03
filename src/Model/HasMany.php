@@ -60,7 +60,7 @@ class HasMany extends AbstractManyRelation
     /**
      * Add records to the relationship.
      *
-     * Note that the spec says that duplicates MUST NOT be added. The default Laravel
+     * Note that the spec says that duplicates MUST NOT be added. The default Hyperf
      * behaviour is to add duplicates, therefore we need to do some work to ensure
      * that we only add the records that are not already in the relationship.
      *

@@ -33,7 +33,7 @@ trait FiltersModels
      * model scopes, and pass the filter value to that scope.
      * For example, if the client has sent a `filter[slug]` query
      * parameter, we expect either there to be a `scopeSlug` method
-     * on the model, or we will use Eloquent's magic `whereSlug` method.
+     * on the model, or we will use model's magic `whereSlug` method.
      *
      * If you need to map a filter parameter to a different scope name,
      * then you can define it here. For example if `filter[slug]`
@@ -114,7 +114,7 @@ trait FiltersModels
             return Str::camelize($key);
         }
 
-        /* Or use Eloquent's `where*` magic method */
+        /* Or use model's `where*` magic method */
         return 'where' . Str::classify($key);
     }
 

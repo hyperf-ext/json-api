@@ -141,8 +141,8 @@ abstract class AbstractGeneratorCommand extends GeneratorCommand
         }
 
         return [
-            ['model', 'e', InputOption::VALUE_NONE, 'Use Eloquent classes.'],
-            ['no-model', 'o', InputOption::VALUE_NONE, 'Do not use Eloquent classes.'],
+            ['model', 'e', InputOption::VALUE_NONE, 'Use model classes.'],
+            ['no-model', 'o', InputOption::VALUE_NONE, 'Do not use model classes.'],
         ];
     }
 

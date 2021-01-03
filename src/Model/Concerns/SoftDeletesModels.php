@@ -94,7 +94,7 @@ trait SoftDeletesModels
      * Deserialize the provided value for the soft delete attribute.
      *
      * If a boolean is provided, we interpret the soft delete value as now.
-     * We check for all the boolean values accepted by the Laravel boolean
+     * We check for all the boolean values accepted by the Hyperf boolean
      * validator.
      *
      * @param $value
@@ -166,12 +166,10 @@ trait SoftDeletesModels
         }
 
         /*
-         * To ensure Laravel still executes its soft-delete logic (e.g. firing events)
+         * To ensure Hyperf still executes its soft-delete logic (e.g. firing events)
          * we need to delete before a save when we are soft-deleting. Although this
          * may result in two database calls in this scenario, it means we can guarantee
-         * that standard Laravel soft-delete logic is executed.
-         *
-         * @see https://github.com/cloudcreativity/laravel-json-api/issues/371
+         * that standard Hyperf soft-delete logic is executed.
          */
         if ($this->willSoftDelete($record)) {
             $key = $this->getSoftDeleteKey($record);

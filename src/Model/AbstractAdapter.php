@@ -530,7 +530,7 @@ abstract class AbstractAdapter extends AbstractResourceAdapter
 
     /**
      * @param \Closure $factory
-     *                          a factory that creates a new Eloquent query builder
+     *                          a factory that creates a new model query builder
      * @return QueriesMany
      */
     protected function queriesMany(\Closure $factory)
@@ -607,7 +607,7 @@ abstract class AbstractAdapter extends AbstractResourceAdapter
     }
 
     /**
-     * Get JSON API parameters to use when constructing an Eloquent query.
+     * Get JSON API parameters to use when constructing an model query.
      *
      * This method is used to push in any default parameter values that should
      * be used if the client has not provided any.

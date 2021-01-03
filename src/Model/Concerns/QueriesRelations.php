@@ -46,7 +46,7 @@ trait QueriesRelations
 
         if (! $relation || ! $this->acceptRelation($relation)) {
             throw new RuntimeException(sprintf(
-                'JSON API relation %s cannot be used for an Eloquent %s relation.',
+                'JSON API relation %s cannot be used for an model %s relation.',
                 class_basename($this),
                 class_basename($relation)
             ));
@@ -56,7 +56,7 @@ trait QueriesRelations
     }
 
     /**
-     * Is the supplied Eloquent relation acceptable for this JSON API relation?
+     * Is the supplied model relation acceptable for this JSON API relation?
      *
      * @param Relation $relation
      * @return bool
@@ -81,7 +81,7 @@ trait QueriesRelations
     }
 
     /**
-     * Get an Eloquent adapter for the supplied record's relationship.
+     * Get an model adapter for the supplied record's relationship.
      *
      * @param Builder|Relation $relation
      * @return AbstractAdapter
@@ -91,7 +91,7 @@ trait QueriesRelations
         $adapter = $this->getStore()->adapterFor($relation->getModel());
 
         if (! $adapter instanceof AbstractAdapter) {
-            throw new RuntimeException('Expecting inverse resource adapter to be an Eloquent adapter.');
+            throw new RuntimeException('Expecting inverse resource adapter to be an model adapter.');
         }
 
         return $adapter;

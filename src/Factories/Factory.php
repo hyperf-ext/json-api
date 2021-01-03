@@ -267,7 +267,7 @@ class Factory extends BaseFactory
     }
 
     /**
-     * Create a Laravel validator that has JSON API error objects.
+     * Create a Hyperf validator that has JSON API error objects.
      *
      * @param null|\Closure $callback a closure for creating an error, that will be bound to the error translator
      */

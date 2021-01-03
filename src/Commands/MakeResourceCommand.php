@@ -36,8 +36,8 @@ class MakeResourceCommand extends Command
         {resource : The resource to create files for}
         {--a|auth : Generate a resource authorizer}
         {--c|content-negotiator : Generate a resource content negotiator}
-        {--e|model : Use Eloquent classes}
-        {--N|no-model : Do not use Eloquent classes}
+        {--e|model : Use model classes}
+        {--N|no-model : Do not use model classes}
         {--o|only= : Specify the classes to generate}
         {--x|except= : Skip the specified classes}
     ';
@@ -89,14 +89,14 @@ class MakeResourceCommand extends Command
             $commands = $this->filterCommands($commands, $type);
         }
 
-        /** Run commands that cannot accept Eloquent parameters. */
-        $notEloquent = ['gen:json-api:validators'];
+        /** Run commands that cannot accept model parameters. */
+        $notModel = ['gen:json-api:validators'];
 
-        if (! $this->runCommandsWithParameters($commands->only($notEloquent), $resourceParameter)) {
+        if (! $this->runCommandsWithParameters($commands->only($notModel), $resourceParameter)) {
             return 1;
         }
 
-        /** Run commands that can accept Eloquent parameters. */
+        /** Run commands that can accept model parameters. */
         $model = ['gen:json-api:adapter', 'gen:json-api:schema'];
 
         if (! $this->runCommandsWithParameters($commands->only($model), $modelParameters)) {
