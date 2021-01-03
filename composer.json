@@ -1,0 +1,86 @@
+{
+    "name": "hyperf-ext/json-api",
+    "description": "JSON API (jsonapi.org) support for Hyperf applications.",
+    "keywords": [
+        "jsonapi.org",
+        "json-api",
+        "jsonapi",
+        "json",
+        "api",
+        "hyperf"
+    ],
+    "homepage": "https://github.com/hyperf-ext/json-api",
+    "support": {
+        "issues": "https://github.com/hyperf-ext/json-api/issues"
+    },
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Eric Zhu",
+            "email": "eric@zhu.email"
+        },
+        {
+            "name": "Cloud Creativity Ltd",
+            "email": "info@cloudcreativity.co.uk"
+        }
+    ],
+    "require": {
+        "php": "^7.4",
+        "ext-json": "*",
+        "ext-intl": "*",
+        "ext-swoole": ">=4.5",
+        "hyperf-ext/auth": "~2.1.0",
+        "hyperf-ext/http-server-router": "~2.1.0",
+        "hyperf/async-queue": "~2.1.0",
+        "hyperf/command": "~2.1.0",
+        "hyperf/config": "~2.1.0",
+        "hyperf/contract": "~2.1.0",
+        "hyperf/database": "~2.1.0",
+        "hyperf/db-connection": "~2.1.0",
+        "hyperf/di": "~2.1.0",
+        "hyperf/filesystem": "~2.1.0",
+        "hyperf/framework": "~2.1.0",
+        "hyperf/guzzle": "~2.1.0",
+        "hyperf/http-server": "~2.1.0",
+        "hyperf/logger": "~2.1.0",
+        "hyperf/paginator": "~2.1.0",
+        "hyperf/translation": "~2.1.0",
+        "hyperf/utils": "~2.1.0",
+        "hyperf/validation": "~2.1.0",
+        "neomerx/json-api": "^1.0.3",
+        "ramsey/uuid": "^4.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.14",
+        "hyperf/devtool": "~2.1.0",
+        "hyperf/testing": "~2.1.0",
+        "phpstan/phpstan": "^0.12",
+        "swoole/ide-helper": "dev-master",
+        "mockery/mockery": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "HyperfExt\\JsonApi\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "HyperfTest\\HyperfExt\\JsonApi\\": "tests"
+        }
+    },
+    "extra": {
+        "hyperf": {
+            "config": "HyperfExt\\JsonApi\\ConfigProvider"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {
+        "test": "co-phpunit -c phpunit.xml --colors=always",
+        "analyse": "phpstan analyse --memory-limit 1024M -l 0 ./src",
+        "cs-fix": "php-cs-fixer fix $1"
+    }
+}

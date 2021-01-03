@@ -1,0 +1,54 @@
+<?php
+
+declare(strict_types=1);
+
+namespace %NAMESPACE%;
+
+use HyperfExt\JsonApi\Validation\AbstractValidators;
+
+class %CLASS% extends AbstractValidators
+{
+    /**
+     * The include paths a client is allowed to request.
+     *
+     * @var null|string[] The allowed paths, an empty array for none allowed, or null to allow all paths
+     */
+    protected ?array $allowedIncludePaths = [];
+
+    /**
+     * The sort field names a client is allowed send.
+     *
+     * @var null|string[] The allowed fields, an empty array for none allowed, or null to allow all fields
+     */
+    protected ?array $allowedSortParameters = [];
+
+    /**
+     * The filters a client is allowed send.
+     *
+     * @var null|string[] The allowed filters, an empty array for none allowed, or null to allow all
+     */
+    protected ?array $allowedFilteringParameters = [];
+
+    /**
+     * Get resource validation rules.
+     *
+     * @param null|mixed $record The record being updated, or null if creating a resource
+     * @param array $data The data being validated
+     */
+    protected function rules($record, array $data): array
+    {
+        return [
+            //
+        ];
+    }
+
+    /**
+     * Get query parameter validation rules.
+     */
+    protected function queryRules(): array
+    {
+        return [
+            //
+        ];
+    }
+}

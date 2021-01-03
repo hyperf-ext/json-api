@@ -1,0 +1,103 @@
+<?php
+
+declare(strict_types=1);
+
+namespace %NAMESPACE%;
+
+use Hyperf\Utils\Collection;
+use HyperfExt\JsonApi\Adapter\AbstractResourceAdapter;
+use HyperfExt\JsonApi\Document\ResourceObject;
+use Neomerx\JsonApi\Contracts\Encoder\Parameters\EncodingParametersInterface;
+
+class %CLASS% extends AbstractResourceAdapter
+{
+    /**
+     * Create a new record.
+     *
+     * Implementing classes need only implement the logic to transfer the minimum
+     * amount of data from the resource that is required to construct a new record
+     * instance. The adapter will then fill the object after it has been
+     * created.
+     *
+     * @return mixed The new domain record
+     */
+    protected function createRecord(ResourceObject $resource)
+    {
+        // TODO: Implement createRecord() method.
+    }
+
+    /**
+     * Fill JSON API attributes into the record.
+     *
+     * @param mixed $record
+     */
+    protected function fillAttributes($record, Collection $attributes)
+    {
+        // TODO: Implement fillAttributes() method.
+    }
+
+    /**
+     * Persist changes to the record.
+     *
+     * @param mixed $record
+     *
+     * @return null|\HyperfExt\JsonApi\Contracts\Queue\AsynchronousProcess
+     */
+    protected function persist($record): ?AsynchronousProcess
+    {
+        // TODO: Implement persist() method.
+    }
+
+    /**
+     * Delete a record from storage.
+     *
+     * @param mixed $record
+     *
+     * @return bool Whether the record was successfully destroyed
+     */
+    protected function destroy($record): bool
+    {
+        // TODO: Implement destroy() method.
+    }
+
+    /**
+     * Query many domain records.
+     *
+     * @return mixed
+     */
+    public function query(EncodingParametersInterface $parameters)
+    {
+        // TODO: Implement query() method.
+    }
+
+    /**
+     * Does a domain record of the specified JSON API resource id exist?
+     */
+    public function exists(string $resourceId): bool
+    {
+        // TODO: Implement exists() method.
+    }
+
+    /**
+     * Get the domain record that relates to the specified JSON API resource id, if it exists.
+     */
+    public function find(string $resourceId)
+    {
+        // TODO: Implement find() method.
+    }
+
+    /**
+     * Find many domain records for the specified JSON API resource ids.
+     *
+     * The returned collection MUST NOT contain any duplicate domain records, and MUST only contain
+     * domain records that match the supplied resource ids. A collection MUST be returned even if some
+     * or all of the resource IDs cannot be converted into domain records - i.e. the returned collection
+     * may contain less domain records than the supplied number of ids.
+     *
+     * @param array $resourceIds
+     */
+    public function findMany(iterable $resourceIds): iterable
+    {
+        // TODO: Implement findMany() method.
+    }
+}

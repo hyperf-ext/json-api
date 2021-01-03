@@ -1,0 +1,39 @@
+<?php
+
+declare(strict_types=1);
+
+namespace %NAMESPACE%;
+
+use Neomerx\JsonApi\Schema\SchemaProvider;
+
+class %CLASS% extends SchemaProvider
+{
+    /**
+     * @var string
+     */
+    protected $resourceType = '%RESOURCE_TYPE%';
+
+    /**
+     * Get resource identity.
+     *
+     * @param mixed $resource The domain record being serialized
+     *
+     * @return string
+     */
+    public function getId($resource)
+    {
+        // TODO
+    }
+
+    /**
+     * Get resource attributes.
+     *
+     * @param mixed $resource The domain record being serialized
+     *
+     * @return array
+     */
+    public function getAttributes($resource)
+    {
+        // TODO
+    }
+}

@@ -1,0 +1,42 @@
+<?php
+
+declare(strict_types=1);
+
+namespace %NAMESPACE%;
+
+use Neomerx\JsonApi\Schema\SchemaProvider;
+
+class %CLASS% extends SchemaProvider
+{
+    /**
+     * @var string
+     */
+    protected $resourceType = '%RESOURCE_TYPE%';
+
+    /**
+     * Get resource identity.
+     *
+     * @param \%MODEL_NAMESPACE%\%RECORD% $resource The domain record being serialized
+     *
+     * @return string
+     */
+    public function getId($resource)
+    {
+        return (string) $resource->getRouteKey();
+    }
+
+    /**
+     * Get resource attributes.
+     *
+     * @param \%MODEL_NAMESPACE%\%RECORD% $resource The domain record being serialized
+     *
+     * @return array
+     */
+    public function getAttributes($resource)
+    {
+        return [
+            'createdAt' => $resource->created_at,
+            'updatedAt' => $resource->updated_at,
+        ];
+    }
+}

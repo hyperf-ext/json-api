@@ -1,0 +1,108 @@
+<?php
+
+declare(strict_types=1);
+/**
+ * Copyright (c) 2020 Cloud Creativity Limited
+ * Modifications copyright (c) 2021 Eric Zhu
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * This file has been modified to add support for Hyperf framework.
+ */
+namespace HyperfExt\JsonApi\Validation;
+
+use Closure;
+use Hyperf\Contract\ValidatorInterface as ValidatorContract;
+use Hyperf\Utils\Contracts\MessageBag;
+use HyperfExt\JsonApi\Contracts\Validation\ValidatorInterface;
+use HyperfExt\JsonApi\Document\Error\Translator as ErrorTranslator;
+use Neomerx\JsonApi\Exceptions\ErrorCollection;
+
+class Validator implements ValidatorInterface
+{
+    /**
+     * @var ValidatorContract
+     */
+    protected $validator;
+
+    /**
+     * @var ErrorTranslator
+     */
+    protected $translator;
+
+    /**
+     * @var null|\Closure
+     */
+    protected $callback;
+
+    public function __construct(
+        ValidatorContract $validator,
+        ErrorTranslator $translator,
+        Closure $callback = null
+    ) {
+        $this->validator = $validator;
+        $this->translator = $translator;
+        $this->callback = $callback;
+    }
+
+    public function validate(): array
+    {
+        return $this->validator->validate();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function validated(): array
+    {
+        return $this->validator->validated();
+    }
+
+    public function fails(): bool
+    {
+        return $this->validator->fails();
+    }
+
+    public function failed(): array
+    {
+        return $this->validator->failed();
+    }
+
+    public function sometimes($attribute, $rules, callable $callback)
+    {
+        return $this->validator->sometimes($attribute, $rules, $callback);
+    }
+
+    public function after($callback)
+    {
+        return $this->validator->after($callback);
+    }
+
+    public function errors(): MessageBag
+    {
+        return $this->validator->errors();
+    }
+
+    public function getMessageBag(): MessageBag
+    {
+        return $this->validator->getMessageBag();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getErrors(): ErrorCollection
+    {
+        return $this->translator->failedValidator($this, $this->callback);
+    }
+}

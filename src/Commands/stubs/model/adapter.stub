@@ -1,0 +1,36 @@
+<?php
+
+declare(strict_types=1);
+
+namespace %NAMESPACE%;
+
+use Hyperf\Database\Model\Builder;
+use Hyperf\Utils\Collection;
+use HyperfExt\JsonApi\Model\AbstractAdapter;
+use HyperfExt\JsonApi\Pagination\StandardStrategy;
+
+class %CLASS% extends AbstractAdapter
+{
+    /**
+     * Mapping of JSON API attribute field names to model keys.
+     */
+    protected array $attributes = [];
+
+    /**
+     * Mapping of JSON API filter names to model scopes.
+     */
+    protected array $filterScopes = [];
+
+    public function __construct(StandardStrategy $paging)
+    {
+        parent::__construct(new \%MODEL_NAMESPACE%\%RECORD%(), $paging);
+    }
+
+    /**
+     * Apply the supplied filters to the builder instance.
+     */
+    protected function filter(Builder $query, Collection $filters): void
+    {
+        $this->filterWithScopes($query, $filters);
+    }
+}

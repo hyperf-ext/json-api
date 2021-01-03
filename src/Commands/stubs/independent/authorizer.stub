@@ -1,0 +1,81 @@
+<?php
+
+declare(strict_types=1);
+
+namespace %NAMESPACE%;
+
+use HyperfExt\JsonApi\Auth\AbstractAuthorizer;
+use Psr\Http\Message\ServerRequestInterface;
+
+class %CLASS% extends AbstractAuthorizer
+{
+    /**
+     * Authorize a resource index request.
+     *
+     * @param string $type The domain record type
+     * @param ServerRequestInterface $request The inbound request
+     *
+     * @throws \HyperfExt\Auth\Exceptions\AuthenticationException If the request is not authorized
+     * @throws \HyperfExt\Auth\Exceptions\AuthorizationException If the request is not authorized
+     */
+    public function index(string $type, ServerRequestInterface $request)
+    {
+        // TODO: Implement index() method.
+    }
+
+    /**
+     * Authorize a resource create request.
+     *
+     * @param string $type The domain record type
+     * @param ServerRequestInterface $request The inbound request
+     *
+     * @throws \HyperfExt\Auth\Exceptions\AuthenticationException If the request is not authorized
+     * @throws \HyperfExt\Auth\Exceptions\AuthorizationException If the request is not authorized
+     */
+    public function create(string $type, ServerRequestInterface $request)
+    {
+        // TODO: Implement create() method.
+    }
+
+    /**
+     * Authorize a resource read request.
+     *
+     * @param object $record The domain record
+     * @param ServerRequestInterface $request The inbound request
+     *
+     * @throws \HyperfExt\Auth\Exceptions\AuthenticationException If the request is not authorized
+     * @throws \HyperfExt\Auth\Exceptions\AuthorizationException If the request is not authorized
+     */
+    public function read(object $record, ServerRequestInterface $request)
+    {
+        // TODO: Implement read() method.
+    }
+
+    /**
+     * Authorize a resource update request.
+     *
+     * @param object $record The domain record
+     * @param ServerRequestInterface $request The inbound request
+     *
+     * @throws \HyperfExt\Auth\Exceptions\AuthenticationException If the request is not authorized
+     * @throws \HyperfExt\Auth\Exceptions\AuthorizationException If the request is not authorized
+     */
+    public function update(object $record, ServerRequestInterface $request)
+    {
+        // TODO: Implement update() method.
+    }
+
+    /**
+     * Authorize a resource read request.
+     *
+     * @param object $record The domain record
+     * @param ServerRequestInterface $request The inbound request
+     *
+     * @throws \HyperfExt\Auth\Exceptions\AuthenticationException If the request is not authorized
+     * @throws \HyperfExt\Auth\Exceptions\AuthorizationException If the request is not authorized
+     */
+    public function delete(object $record, ServerRequestInterface $request)
+    {
+        // TODO: Implement delete() method.
+    }
+}
