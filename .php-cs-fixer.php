@@ -19,7 +19,7 @@ limitations under the License.
 This file has been modified to add support for Hyperf framework.
 EOF;
 
-return PhpCsFixer\Config::create()
+return (new PhpCsFixer\Config())
     ->setRiskyAllowed(true)
     ->setRules([
         '@PSR2' => true,
@@ -27,7 +27,7 @@ return PhpCsFixer\Config::create()
         '@DoctrineAnnotation' => true,
         '@PhpCsFixer' => true,
         'header_comment' => [
-            'commentType' => 'PHPDoc',
+            'comment_type' => 'PHPDoc',
             'header' => $header,
             'separate' => 'none',
             'location' => 'after_declare_strict',
